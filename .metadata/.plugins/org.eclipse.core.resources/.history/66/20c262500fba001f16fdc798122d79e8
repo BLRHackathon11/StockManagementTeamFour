@@ -1,0 +1,11 @@
+package com.ind.oms.repository;
+
+public interface StockRepository {
+	
+	 @Override public List<Department> fetchDepartmentList()
+	    {
+	        return (List<Department>)
+	            departmentRepository.findAll();
+	    }
+
+}

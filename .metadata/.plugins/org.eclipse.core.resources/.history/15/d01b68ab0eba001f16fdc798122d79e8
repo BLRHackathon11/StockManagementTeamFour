@@ -1,0 +1,11 @@
+package com.ind.oms.model;
+
+import jakarta.persistence.Entity;
+
+@Entity
+public class User {
+	
+	Long id;
+	String userName;
+
+}

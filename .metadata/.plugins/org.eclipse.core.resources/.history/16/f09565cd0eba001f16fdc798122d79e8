@@ -1,0 +1,8 @@
+package com.ind.oms.model;
+
+public class Orders {
+	
+	UUID orderId;
+
+
+}

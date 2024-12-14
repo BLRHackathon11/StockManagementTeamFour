@@ -1,0 +1,11 @@
+package com.ind.oms;
+
+
+
+import java.util.ArrayList;
+import java.util.List;
+import org.springframework.stereotype.Component;
+
+@Repository
+public interface SampleRepository extends JpaRepository<SampleModel, Long> {
+}

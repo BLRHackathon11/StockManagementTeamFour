@@ -1,0 +1,20 @@
+package com.ind.oms;
+
+import org.springframework.stereotype.Component;
+
+@Component
+public class MessageProducer {
+
+private Logger log =LoggerFactory.getLogger(MessageProducer.class);
+
+      @Autowired 
+      private KafkaTemplate<String, String> kafkaTemplate;
+
+      @Value("${myapp.kafka.topic}")
+      private String topic;
+
+      public void sendMessage(String message) {
+         log.info("MESSAGE SENT FROM PRODUCER END -> " + message);
+         kafkaTemplate.send(topic, message);
+      }
+}

@@ -1,0 +1,40 @@
+package com.ind.oms;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.kafka.core.KafkaTemplate;
+import org.springframework.stereotype.Component;
+
+@Component
+public class MessageProducer {
+
+private Logger log =LoggerFactory.getLogger(MessageProducer.class);
+
+      @Autowired 
+      private KafkaTemplate<String, String> kafkaTemplate;
+
+      @Value("${myapp.kafka.topic}")
+      private String topic;
+
+      public void sendMessage(String message) {
+         log.info("MESSAGE SENT FROM PRODUCER END -> " + message);
+         kafkaTemplate.send(topic, message);
+      }
+      
+      public void placeOrder(int userId,int stockId,int Quantity) {
+          log.info("user "+userId+"placed an order for the number of stock with name ");
+          String message  = "user "+userId+"placed an order for the number"+Quantity+" of stock with Id "+stockId;
+          kafkaTemplate.send(topic, message);
+         
+       }
+      
+      public void viewOrder(int userId) {
+          log.info("returning all the ");
+          String message  = "user "+userId+"placed an order for the number"+Quantity+" of stock with Id "+stockId;
+          kafkaTemplate.send(topic, message);
+         
+       }
+      
+}

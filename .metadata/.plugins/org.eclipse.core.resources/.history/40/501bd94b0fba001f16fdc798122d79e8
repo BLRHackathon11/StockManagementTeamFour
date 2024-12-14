@@ -1,0 +1,5 @@
+package com.ind.oms.repository;
+
+public interface StockRepository {
+
+}

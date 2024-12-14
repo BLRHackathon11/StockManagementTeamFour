@@ -1,0 +1,5 @@
+package com.ind.oms.model;
+
+public class User {
+
+}

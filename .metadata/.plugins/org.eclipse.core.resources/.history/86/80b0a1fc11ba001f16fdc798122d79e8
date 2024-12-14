@@ -1,0 +1,22 @@
+server:
+  port: 9090
+
+spring:
+  kafka:
+    producer:
+      bootstrap-servers: 10.10.122.60:9092
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+                  
+    consumer:
+      bootstrap-servers: 10.10.122.60:9092
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+        
+myapp:
+    kafka:
+      topic: myKafkaTest
+#spring.datasource.url:jdbc:mysql:10.10.122.60/stock_oms_team4
+#spring.datasource.username:team4
+#spring.datasource.password:team4@indium4
+	#		#spring.jpa.hibernate.ddl-auto:update

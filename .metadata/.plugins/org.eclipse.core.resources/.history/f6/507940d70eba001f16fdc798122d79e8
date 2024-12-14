@@ -1,0 +1,10 @@
+package com.ind.oms.model;
+
+import java.util.UUID;
+
+public class Orders {
+	
+	UUID orderId;
+
+
+}
